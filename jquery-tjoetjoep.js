@@ -29,9 +29,6 @@
     $(this).attr("id", youtube_id);
     
     swfobject.embedSWF(youtube_url, youtube_id, opts.width, opts.height, "8", null, flashvars, params, attributes);
-    
-    $(this).siblings(".control").click(_changePlayerState);
-    
   };
   
   window.onPlayerStateChange = function(new_state, id){
