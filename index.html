@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--<meta http-equiv="Content-Language" content="nl-BE"> Only use if site is in non US english -->
+  <!--<meta name="Language" content="english"> Only use if site is in non US english -->
+  <meta charset="utf-8" />
+  <meta name="description" content="">
+
+  <title>jQuery tjoetjoep</title>
+
+</head>
+<body>
+  
+  <a href="" class="close">Close</a>
+  
+  <div class="video">
+    <a href="http://www.youtube.com/watch?v=0Bmhjf0rKe8" class="youtube">Bekijk deze video</a>
+  </div>
+  
+  <div class="video">
+    <a href="http://www.youtube.com/watch?v=nGeKSiCQkPw" class="youtube">Bekijk deze video</a>
+  </div>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+  <script src="js/swfobject.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquery-tjoetjoep.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script type="text/javascript">
+  
+    // DOM Ready
+    $(function(){
+      
+      // To convert links to players
+      $(".youtube").tjoetjoep({
+        "width": 600,
+        "height": 400
+      });
+      
+      // Add a close button, say for closing an overlay
+      $(".close").click(function(event){
+        event.preventDefault();
+        
+        // When closing the overlay, it's necessary to remove the swf's,
+        // this removes every player created with jQuery tjoetjoep
+        $.fn.tjoetjoep.kill();
+        
+      });
+      
+    });
+    
+  </script>
+
+</body>
+</html>
