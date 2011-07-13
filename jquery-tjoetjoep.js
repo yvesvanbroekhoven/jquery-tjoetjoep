@@ -1,26 +1,13 @@
 /*
  * jQuery tjoetjoep
  *    Converts a link to a youtube movie to a youtube player
- *    Pauses other players in the page when you start a player
+ *    pauses other players in the page when you start a player
  *
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Yves Van Broekhoven
  * Created at: 2011/07/12
- *
- * How to use:
- *
- *    (Be sure you end your href url with the youtube ID, no other parameters)
- *
- *    HTML:
- *      <a href="http://www.youtube.com/watch?v=0Bmhjf0rKe8" class="your-selector">Watch this video</a>
- *
- *    JS:
- *      $(".your-selector").tjoetjoep();
- *
- *
- * Kill all players in the page:
- *
- *    $.fn.tjoetjoep.kill();
+ * https://github.com/yvesvanbroekhoven/jquery-tjoetjoep
+ * 
  */
 
 (function($){
@@ -37,7 +24,7 @@
     ;
     
     params.allowScriptAccess = "always";
-    attributes.class         = "tjoetjoep";
+    attributes.Class         = "tjoetjoep";
     
     $(this).attr("id", youtube_id);
     
@@ -58,7 +45,11 @@
   
   window.onYouTubePlayerReady = function(id){
     var player = $("#" + id)[0];
-    player.addEventListener("onStateChange", "(function(new_state){ return window.onPlayerStateChange(new_state, '" + id + "'); })");
+    if (player.attachEvent) {
+      player.attachEvent("onStateChange", "(function(new_state){ return window.onPlayerStateChange(new_state, '" + id + "'); })");
+    } else {
+      player.addEventListener("onStateChange", "(function(new_state){ return window.onPlayerStateChange(new_state, '" + id + "'); })");
+    }
   };
   
   $.fn.tjoetjoep = function(options){

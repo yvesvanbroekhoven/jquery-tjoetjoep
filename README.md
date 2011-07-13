@@ -1,7 +1,7 @@
 # jQuery tjoetjoep
 
-Converts a link to a youtube movie to a youtube player
-Pauses other players in the page when you start a player
+Converts a link to a youtube movie to a youtube player and
+pauses other players in the page when you start a player
 
 # How to use:
 
