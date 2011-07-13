@@ -74,7 +74,7 @@
   };
   
   $.fn.tjoetjoep.kill = function(){
-    $("object.youtube").each(function(){
+    $("object.tjoetjoep").each(function(){
       swfobject.removeSWF(this.id);
     });
   };
