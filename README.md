@@ -6,6 +6,7 @@ Pauses other players in the page when you start a player
 # How to use:
 
 * (Be sure you end your href url with the youtube ID, no other parameters)
+* Add swfobject 2 to your page, otherwise this won't work
 
 ## HTML:
 ```
