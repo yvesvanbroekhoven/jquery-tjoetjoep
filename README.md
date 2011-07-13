@@ -18,6 +18,11 @@ Pauses other players in the page when you start a player
 $(".your-selector").tjoetjoep();
 ```
 
+# Options
+
+* width (default 350) - set the width of the youtube player
+* height (default 255) - set the height of the youtube player
+
 # Public methods
 
 ## Kill all players in the page:
